@@ -109,9 +109,8 @@ END
 4. Kembali
  ⁠
 
-### ⚖️ Menu Tentukan Pelaku
+### 👩👨 Menu Tentukan Pelaku
 
-⁠ text
 1. Emma Alden
 2. Liam
 3. Lena
