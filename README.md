@@ -1,6 +1,8 @@
 <p align="center">
-  # 🔍 ClueHunt : A Mystery Solver Game
-  
+  <b># 🔍 ClueHunt : A Mystery Solver Game</b><br>
+</p>
+
+<p align="center">
   <b>Selamat datang di ClueHunt : A Mystery Solver Game!</b><br>
   Sebuah game investigasi kriminal yang mengajak pemain menjadi seorang detektif untuk mengungkap misteri pembunuhan David Alden.
 </p>
