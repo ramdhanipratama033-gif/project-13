@@ -56,9 +56,9 @@ Sebagai detektif, pemain harus mengungkap kebenaran di balik kematian David Alde
 
 # 🎮 Alur Permainan
 
-START
-  ↓
-Tampilkan Cerita Kasus
+START<br>
+  ↓<br>
+Tampilkan Cerita Kasus<br>
   ↓
 Menu Utama
   ↓
@@ -86,8 +86,7 @@ END
 
 # 📋 Struktur Menu
 
-⁠ text
-MENU UTAMA
+### MENU UTAMA
 
 1. Investigasi
 2. Daftar Tersangka
@@ -97,7 +96,6 @@ MENU UTAMA
 
 ### 🔍 Menu Investigasi
 
-⁠ text
 1. Wawancara
 2. Analisis Bukti
 3. Kembali
@@ -105,7 +103,6 @@ MENU UTAMA
 
 ### 🎤 Menu Wawancara
 
-⁠ text
 1. Emma Alden
 2. Liam
 3. Lena
