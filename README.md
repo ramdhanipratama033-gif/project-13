@@ -16,7 +16,6 @@
 - ⁠[Struktur Menu](#-struktur-menu)
 - ⁠[Konsep C++ yang Digunakan](#-konsep-c-yang-digunakan)
 - ⁠[Cara Menjalankan Program](#-cara-menjalankan-program)
-- ⁠[Tim Pengembang](#-tim-pengembang)
 
 ---
 
