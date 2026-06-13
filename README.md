@@ -1,22 +1,22 @@
-# 🔍 ClueHunt - Criminal Investigation Game
+# 🔍 ClueHunt : A Mystery Solver Game
 
 <p align="center">
-  <b>Selamat datang di ClueHunt!</b><br>
-  Sebuah game investigasi kriminal berbasis C++ yang mengajak pemain menjadi seorang detektif untuk mengungkap misteri pembunuhan David Alden.
+  <b>Selamat datang di ClueHunt : A Mystery Solver Game!</b><br>
+  Sebuah game investigasi kriminal yang mengajak pemain menjadi seorang detektif untuk mengungkap misteri pembunuhan David Alden.
 </p>
 
 ---
 
 # 📖 Daftar Isi
 
-•⁠  ⁠[Tentang Project](#-tentang-project)
-•⁠  ⁠[Latar Belakang Cerita](#-latar-belakang-cerita)
-•⁠  ⁠[Fitur Utama](#-fitur-utama)
-•⁠  ⁠[Alur Permainan](#-alur-permainan)
-•⁠  ⁠[Struktur Menu](#-struktur-menu)
-•⁠  ⁠[Konsep C++ yang Digunakan](#-konsep-c-yang-digunakan)
-•⁠  ⁠[Cara Menjalankan Program](#-cara-menjalankan-program)
-•⁠  ⁠[Tim Pengembang](#-tim-pengembang)
+- ⁠[Tentang Project](#-tentang-project)
+- ⁠[Latar Belakang Cerita](#-latar-belakang-cerita)
+- ⁠[Fitur Utama](#-fitur-utama)
+- ⁠[Alur Permainan](#-alur-permainan)
+- ⁠[Struktur Menu](#-struktur-menu)
+- ⁠[Konsep C++ yang Digunakan](#-konsep-c-yang-digunakan)
+- ⁠[Cara Menjalankan Program](#-cara-menjalankan-program)
+- ⁠[Tim Pengembang](#-tim-pengembang)
 
 ---
 
@@ -192,23 +192,6 @@ g++ main.cpp -o cluehunt
 
 ---
 
-# 👨‍💻 Tim Pengembang
-
-Kelompok ClueHunt
-
-| No | Nama | Tugas |
-|----|------|------|
-| 1 | Nama Anggota | Project Manager |
-| 2 | Nama Anggota | Story & Intro |
-| 3 | Nama Anggota | Sistem Wawancara |
-| 4 | Nama Anggota | Sistem Bukti |
-| 5 | Nama Anggota | Daftar Tersangka |
-| 6 | Nama Anggota | Sistem Penentuan Pelaku |
-| 7 | Nama Anggota | Testing & Dokumentasi |
-
----
-
 <p align="center">
-<b>🔍 ClueHunt - Criminal Investigation Game</b><br>
-Built with ❤️ using C++
+<b>🔍 ClueHunt : A Mystery Solver Game</b><br>
 </p>
