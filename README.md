@@ -1,4 +1,4 @@
-  <b># 🔍 ClueHunt : A Mystery Solver Game</b><br>
+# 🔍 ClueHunt : A Mystery Solver Game
 
 <p align="center">
   <b>Selamat datang di ClueHunt : A Mystery Solver Game!</b><br>
@@ -21,9 +21,7 @@
 
 # 🎬 Tentang Project
 
-*ClueHunt* merupakan game investigasi kriminal berbasis console yang dikembangkan menggunakan bahasa pemrograman *C++* sebagai project akhir mata kuliah Pemrograman Dasar.
-
-Dalam permainan ini, pemain berperan sebagai seorang detektif yang harus mengumpulkan petunjuk, mewawancarai tersangka, menganalisis bukti, dan menentukan siapa pelaku sebenarnya di balik kasus pembunuhan misterius yang terjadi di sebuah mansion mewah.
+*ClueHunt* adalah game investigasi kriminal berbasis *C++* yang mengajak pemain berperan sebagai detektif untuk mengungkap kematian misterius David Alden. Dengan mengumpulkan bukti, mewawancarai tersangka, dan menganalisis petunjuk yang ada, pemain harus menemukan pelaku sebenarnya di balik kasus pembunuhan yang terjadi di sebuah mansion saat pesta perayaan perusahaan.
 
 ---
 
