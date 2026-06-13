@@ -57,7 +57,7 @@ Sebagai detektif, pemain harus mengungkap kebenaran di balik kematian David Alde
 # 🎮 Alur Permainan
 
 START<br>
-    ↓<br>
+  </t>↓<br>
 Tampilkan Cerita Kasus<br>
   ↓<br>
 Menu Utama<br>
