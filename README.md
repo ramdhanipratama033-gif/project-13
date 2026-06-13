@@ -1,6 +1,4 @@
-<p align="center">
   <b># 🔍 ClueHunt : A Mystery Solver Game</b><br>
-</p>
 
 <p align="center">
   <b>Selamat datang di ClueHunt : A Mystery Solver Game!</b><br>
