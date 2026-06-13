@@ -80,8 +80,8 @@ Ya             Tidak
 Menang       Kembali Investigasi
  │
 END
-'[ END ]'
 ---
+
 
 # 📋 Struktur Menu
 
