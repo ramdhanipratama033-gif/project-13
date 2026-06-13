@@ -57,29 +57,29 @@ Sebagai detektif, pemain harus mengungkap kebenaran di balik kematian David Alde
 # 🎮 Alur Permainan
 
 START<br>
-  ↓<br>
+    ↓<br>
 Tampilkan Cerita Kasus<br>
-  ↓
-Menu Utama
-  ↓
-Investigasi
-  ↓
-Wawancara Tersangka
-   ↓
-Analisis Bukti
-   ↓
-Daftar Tersangka
-   ↓
-Tentukan Pelaku
-   ↓
-Benar?
- ┌───────┴───────┐
- │               │
-Ya             Tidak
- │               │
-Menang       Kembali Investigasi
- │
-END
+  ↓<br>
+Menu Utama<br>
+  ↓<br>
+Investigasi<br>
+  ↓<br>
+Wawancara Tersangka<br>
+   ↓<br>
+Analisis Bukti<br>
+   ↓<br>
+Daftar Tersangka<br>
+   ↓<br>
+Tentukan Pelaku<br>
+   ↓<br>
+Benar?<br>
+ ┌───────┴───────┐<br>
+ │               │<br>
+Ya             Tidak<br>
+ │               │<br>
+Menang       Kembali Investigasi<br>
+ │<br>
+END<br>
  ⁠
 
 ---
