@@ -141,14 +141,14 @@ END
 
 # 🧪 Bukti yang Ditemukan
 
-•⁠  ⁠📄 Surat ancaman
-•⁠  ⁠📹 Rekaman CCTV koridor
-•⁠  ⁠💻 Draft email David
-•⁠  ⁠🧤 Sidik jari pada botol minuman
-•⁠  ⁠🧊 Hasil forensik es batu
-•⁠  ⁠📹 Rekaman CCTV dapur
-•⁠  ⁠📂 Dokumen lama milik ayah Lena
-•⁠  ⁠🪟 Pecahan kaca di dekat jendela
+•⁠  ⁠📄 Surat ancaman<br>
+•⁠  ⁠📹 Rekaman CCTV koridor<br>
+•⁠  ⁠💻 Draft email David<br>
+•⁠  ⁠🧤 Sidik jari pada botol minuman<br>
+•⁠  ⁠🧊 Hasil forensik es batu<br>
+•⁠  ⁠📹 Rekaman CCTV dapur<br>
+•⁠  ⁠📂 Dokumen lama milik ayah Lena<br>
+•⁠  ⁠🪟 Pecahan kaca di dekat jendela<br>
 
 ---
 
