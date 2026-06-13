@@ -3,7 +3,10 @@ Selamat datang di project kami, yaitu kelompok 13. Kami membuat permainan detect
 ## Daftar Isi
 - [Flow Permainan](#flow-permainan)
 - [Struktur Menu Permainan](#struktur-menu-permainan)
+- [Prasyarat](#prasyarat)
 
 ## Flow Permainan
 
 ## Struktur Menu Permainan
+
+## Prasyarat
