@@ -8,6 +8,7 @@ struct Tersangka {
     std::string motif;
     std::string pertanyaan[6];
     std::string jawaban[6];
+    int b;
 
     bool sudahWawancara;
 };
