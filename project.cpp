@@ -2,12 +2,12 @@
 #include <string>
 #include <cstdlib>
 #include <ctime>
-
+using namespace std;
 struct Tersangka {
-    std::string nama;
-    std::string motif;
-    std::string pertanyaan[6];
-    std::string jawaban[6];
+    string nama;
+    string motif;
+    string pertanyaan[6];
+    string jawaban[6];
 
     bool sudahWawancara;
 };
@@ -75,12 +75,12 @@ Tersangka tersangka[3] = {
 };
 
 void clear() {
-    std::cout << "\033[H\033[J";
-    std::cout.flush ();
+    cout << "\033[H\033[J";
+    cout.flush ();
 }
 
 void garis() {
-    std::cout << "========================================================" << std::endl;
+    cout << "========================================================" << endl;
 }
 
 void wawancaraTersangka(int index) {
@@ -88,8 +88,8 @@ void wawancaraTersangka(int index) {
     clear ();
     garis ();
     Tersangka *ptr = &tersangka[index];
-    std::cout << "WAWANCARA DENGAN "
-              << ptr->nama << std::endl;
+    cout << "WAWANCARA DENGAN "
+              << ptr->nama << endl;
 
     int nomor[5] = {0,1,2,3,4};
     for (int iterasi = 0; iterasi < 5; iterasi++) {
@@ -108,25 +108,25 @@ void wawancaraTersangka(int index) {
     int sisaPertanyaan   = 3;
     while(sisaPertanyaan > 0) {
         garis ();
-        std::cout << "Pilih pertanyaan : " << std::endl;
+        cout << "Pilih pertanyaan : " << endl;
         int nomorMenu   = 1;
         for (int indeks = 0; indeks < 3; indeks++) {
             if (!sudahDitanya[indeks]) {
-                std::cout << nomorMenu
+                cout << nomorMenu
                           << ". "
                           << ptr->pertanyaan[pertanyaanAcak[indeks]]
-                          << std::endl;
+                          << endl;
                 nomorMenu++;
             }
         }
 
-        std::cout << nomorMenu
-                  << ". Selesai Wawancara" << std::endl;
+        cout << nomorMenu
+                  << ". Selesai Wawancara" << endl;
         garis ();
 
         int pilihan;
-        std::cout << "Pilihan : ";
-        std::cin >> pilihan;
+        cout << "Pilihan : ";
+        cin >> pilihan;
         if (pilihan == nomorMenu) {
             break;
         }
@@ -144,41 +144,41 @@ void wawancaraTersangka(int index) {
         }
 
         if(indeksPertanyaan == -1) {
-            std::cout << std::endl 
-                      << "Pilihan tidak valid!" << std::endl;
+            cout << endl 
+                      << "Pilihan tidak valid!" << endl;
             continue;
         }
 
         garis();
-        std::cout << "PERTANYAAN : "
+        cout << "PERTANYAAN : "
                   << ptr->pertanyaan[pertanyaanAcak[indeksPertanyaan]]
-                  << std::endl 
-                  << std::endl
+                  << endl 
+                  << endl
                   << "JAWABAN : "
                   << ptr->jawaban[pertanyaanAcak[indeksPertanyaan]]
-                  << std::endl;
+                  << endl;
         sudahDitanya[indeksPertanyaan] = true;
         sisaPertanyaan--;
     }
     ptr->sudahWawancara = true;
     clear ();
     garis ();
-    std::cout << "Wawancara selesai." << std::endl;
+    cout << "Wawancara selesai." << endl;
 }
 
 void menuWawancara() {
     int pilih;
     do {
         garis ();
-        std::cout << "MENU WAWANCARA" << std::endl;
+        cout << "MENU WAWANCARA" << endl;
         garis ();
-        std::cout << "1. Emma Alden"  << std::endl
-                  << "2. Liam" << std::endl
-                  << "3. Lena" << std::endl
-                  << "4. Kembali" << std::endl;
+        cout << "1. Emma Alden"  << endl
+                  << "2. Liam" << endl
+                  << "3. Lena" << endl
+                  << "4. Kembali" << endl;
         garis ();
-        std::cout << "Pilihan : ";
-        std::cin >> pilih;
+        cout << "Pilihan : ";
+        cin >> pilih;
            if (std ::cin.fail()) {
         std :: cin.clear();
         std ::cin.ignore(1000, '\n');
@@ -197,7 +197,7 @@ void menuWawancara() {
             case 4:
                 break;
             default:
-                std::cout << "Pilihan tidak valid!" << std::endl;
+                cout << "Pilihan tidak valid!" << endl;
                            system("pause");
                            system("cls");
         }
