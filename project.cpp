@@ -8,7 +8,6 @@ struct Tersangka {
     std::string motif;
     std::string pertanyaan[6];
     std::string jawaban[6];
-    int b;
 
     bool sudahWawancara;
 };
@@ -22,16 +21,14 @@ Tersangka tersangka[3] = {
             "Bagaimana hubungan Anda dengan David?",
             "Apakah Anda mengetahui isi wasiat David?",
             "Apakah Anda bertengkar dengan David?",
-            "Siapa yang terakhir Anda lihat bersama David?",
-            "Apakah Anda masuk ke ruang kerja malam itu?"
+            "Siapa yang terakhir Anda lihat bersama David?"
         },
         {
-            "Saya berada di ruang tamu bersama para tamu.",
-            "Hubungan kami sedang kurang baik akhir-akhir ini.",
-            "Saya mengetahui sebagian isi wasiatnya.",
-            "Kami sempat berdebat beberapa hari sebelumnya.",
-            "Saya melihat Liam berbicara dengannya.",
-            "Tidak, saya tidak masuk ke ruang kerja."
+            "Saya berada di taman belakang sedang \nbercengkrama bersama para tamu.",
+            "Hubungan kami sedang kurang baik \nakhir-akhir ini, David berselingkuh dari saya.",
+            "Saya mengetahui sebagian isi wasiatnya.\nIsi wasiatnya adalah semua kekayaan akan jadi milik saya",
+            "Kami sempat berdebat beberapa hari sebelumnya, \nkarena perselingkuhanya diketahui.",
+            "Saya melihat Liam berbicara dengannya."
         },
         false
     },
@@ -42,18 +39,16 @@ Tersangka tersangka[3] = {
         {
             "Di mana Anda saat kejadian?",
             "Apa hubungan Anda dengan korban?",
-            "Apakah Anda mengetahui email David?",
             "Apakah Anda memiliki masalah dengan David?",
-            "Mengapa Anda terlihat di koridor?",
-            "Apakah Anda masuk ke ruang kerja?"
+            "Apakah Anda masuk ke ruang kerja?",
+            "Apa yang kamu lakukan terakhir kali bertemu korban?"
         },
         {
-            "Saya sedang berbicara dengan beberapa tamu.",
-            "Kami sahabat sekaligus rekan kerja.",
-            "Tidak, saya tidak mengetahui email tersebut.",
-            "Tidak ada masalah serius antara kami.",
-            "Saya hanya mencari toilet.",
-            "Tidak, saya tidak masuk ke ruang kerja."
+            "Saya sedang berada di ruang makan ketika lampu padam.",
+            "Kami sahabat baik sekaligus rekan kerja.",
+            "Kami memiliki masalah, David ingin \nmelaporkan saya ke polisi karena penggelapan dana.",
+            "Tidak, saya tidak masuk ke ruang kerja.",
+            "Saya hanya melaporkan situasi di kantor."
         },
         false
     },
@@ -63,43 +58,42 @@ Tersangka tersangka[3] = {
         "Menyimpan rahasia masa lalu keluarganya",
         {
             "Di mana Anda saat kejadian?",
-            "Sudah berapa lama Anda bekerja?",
+            "Sudah berapa lama Anda bekerja dengan korban?",
             "Apa hubungan Anda dengan David?",
             "Mengapa Anda berada di dapur?",
-            "Apa isi dokumen lama itu?",
-            "Apakah Anda pernah mengancam David?"
+            "Apa isi dokumen yang telah kamu siapkan?"
         },
         {
-            "Saya sedang membantu persiapan pesta.",
+            "Saya sedang menyiapkan dokumen di lantai 2.",
             "Saya sudah bekerja selama tujuh tahun.",
             "Beliau adalah atasan saya.",
             "Saya mengambil minuman untuk para tamu.",
-            "Dokumen itu berkaitan dengan ayah saya.",
-            "Tidak pernah."
+            "Dokumen itu berkaitan dengan kejadian \nkematian ayah saya."
         },
         false
     }
 };
 
-void clear () {
-    std::cout << "\033[2J\033[H";
+void clear() {
+    std::cout << "\033[H\033[J";
+    std::cout.flush ();
 }
 
 void garis() {
-    std::cout << std::endl
-              << "=================================================" << std::endl;
+    std::cout << "========================================================" << std::endl;
 }
 
 void wawancaraTersangka(int index) {
+    system ("pause");
     clear ();
-    Tersangka *ptr = &tersangka[index];
     garis ();
+    Tersangka *ptr = &tersangka[index];
     std::cout << "WAWANCARA DENGAN "
-              << ptr->nama;
+              << ptr->nama << std::endl;
 
-    int nomor[6] = {0,1,2,3,4,5};
-    for (int iterasi = 0; iterasi < 6; iterasi++) {
-        int pertanyaan    = rand() % 6;
+    int nomor[5] = {0,1,2,3,4};
+    for (int iterasi = 0; iterasi < 5; iterasi++) {
+        int pertanyaan    = rand() % 5;
         int sementara     = nomor[iterasi];
         nomor[iterasi]    = nomor[pertanyaan];
         nomor[pertanyaan] = sementara;
@@ -112,8 +106,7 @@ void wawancaraTersangka(int index) {
 
     bool sudahDitanya[3] = {false,false,false};
     int sisaPertanyaan   = 3;
-    while(sisaPertanyaan > 0)
-    {
+    while(sisaPertanyaan > 0) {
         garis ();
         std::cout << "Pilih pertanyaan : " << std::endl;
         int nomorMenu   = 1;
@@ -132,8 +125,7 @@ void wawancaraTersangka(int index) {
         garis ();
 
         int pilihan;
-        std::cout << std::endl
-                  << "Pilihan : ";
+        std::cout << "Pilihan : ";
         std::cin >> pilihan;
         if (pilihan == nomorMenu) {
             break;
@@ -163,13 +155,13 @@ void wawancaraTersangka(int index) {
                   << std::endl 
                   << std::endl
                   << "JAWABAN : "
-                  << std::endl
                   << ptr->jawaban[pertanyaanAcak[indeksPertanyaan]]
                   << std::endl;
         sudahDitanya[indeksPertanyaan] = true;
         sisaPertanyaan--;
     }
     ptr->sudahWawancara = true;
+    clear ();
     garis ();
     std::cout << "Wawancara selesai." << std::endl;
 }
@@ -178,12 +170,12 @@ void menuWawancara() {
     int pilih;
     do {
         garis ();
-        std::cout << "MENU WAWANCARA";
+        std::cout << "MENU WAWANCARA" << std::endl;
         garis ();
         std::cout << "1. Emma Alden"  << std::endl
                   << "2. Liam" << std::endl
                   << "3. Lena" << std::endl
-                  << "4. Kembali";
+                  << "4. Kembali" << std::endl;
         garis ();
         std::cout << "Pilihan : ";
         std::cin >> pilih;
@@ -206,17 +198,14 @@ void menuWawancara() {
                 break;
             default:
                 std::cout << "Pilihan tidak valid!" << std::endl;
-                           system("pause");system("cls");
-   
-
+                           system("pause");
+                           system("cls");
         }
-
     }
     while(pilih != 4);
 }
 
-int main()
-{
+int main() {
     menuWawancara ();
     return 0;
 }
