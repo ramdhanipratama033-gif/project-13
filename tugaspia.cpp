@@ -39,7 +39,7 @@ void tampilJudul() {
     cout << "             Murder Mystery Detective Game               \n";
     cout << "=========================================================\n";
     cout << "Tekan ENTER untuk memulai penyelidikan...";
-    cin.get(); // Menunggu pemain menekan tombol enter
+    cin.get();
     cout << endl;
 }
 void tampilCeritaKasus() {
@@ -77,7 +77,4 @@ void inisialisasiData(Tersangka daftarTersangka[], Bukti daftarBukti[]) {
     daftarBukti[6] = {"Dokumen Ayah Lena", "Membuktikan ayah Lena pernah dipecat oleh David (motif dendam).", false};
 }
 void menuUtama(Tersangka daftarTersangka[], Bukti daftarBukti[]) {
-    cout << "\n[Pesan Sistem]: Anda telah berhasil masuk ke fungsi menuUtama().\n";
-    cout << "Pondasi data awal array milik Anggota 1 sudah berhasil dimuat.\n";
-    cout << "Game Selesai (Program Berakhir dengan Sukses).\n";
 }
