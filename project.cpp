@@ -10,6 +10,8 @@ struct Tersangka {
     string jawaban[6];
 
     bool sudahWawancara;
+
+    bool pernahDitanya[5];
 };
 
 Tersangka tersangka[3] = {
@@ -30,7 +32,8 @@ Tersangka tersangka[3] = {
             "Kami sempat berdebat beberapa hari sebelumnya, \nkarena perselingkuhanya diketahui.",
             "Saya melihat Liam berbicara dengannya."
         },
-        false
+        false,
+        {false, false, false, false, false}
     },
 
     {
@@ -50,7 +53,8 @@ Tersangka tersangka[3] = {
             "Tidak, saya tidak masuk ke ruang kerja.",
             "Saya hanya melaporkan situasi di kantor."
         },
-        false
+        false,
+        {false, false, false, false, false}
     },
 
     {
@@ -70,7 +74,8 @@ Tersangka tersangka[3] = {
             "Saya mengambil minuman untuk para tamu.",
             "Dokumen itu berkaitan dengan kejadian \nkematian ayah saya."
         },
-        false
+        false,
+        {false, false, false, false, false}
     }
 };
 
@@ -158,6 +163,7 @@ void wawancaraTersangka(int index) {
                   << ptr->jawaban[pertanyaanAcak[indeksPertanyaan]]
                   << endl;
         sudahDitanya[indeksPertanyaan] = true;
+        ptr->pernahDitanya[pertanyaanAcak[indeksPertanyaan]] = true;
         sisaPertanyaan--;
     }
     ptr->sudahWawancara = true;
@@ -205,7 +211,46 @@ void menuWawancara() {
     while(pilih != 4);
 }
 
+void lihatHasilWawancara() {
+    clear();
+    garis();
+    std::cout << "HASIL WAWANCARA" << std::endl;
+    garis();
+
+    for(int i = 0; i < 3; i++) {
+        std::cout << "\nTersangka : "
+                  << tersangka[i].nama
+                  << std::endl;
+
+        bool adaPertanyaan = false;
+
+        for(int j = 0; j < 5; j++) {
+            if(tersangka[i].pernahDitanya[j]) {
+                adaPertanyaan = true;
+
+                std::cout << "\nPertanyaan : "
+                          << tersangka[i].pertanyaan[j]
+                          << std::endl;
+
+                std::cout << "Jawaban    : "
+                          << tersangka[i].jawaban[j]
+                          << std::endl;
+            }
+        }
+
+        if(!adaPertanyaan) {
+            std::cout << "Belum diwawancarai."
+                      << std::endl;
+        }
+
+        garis();
+    }
+
+    system("pause");
+}
+
 int main() {
     menuWawancara ();
+    lihatHasilWawancara ();
     return 0;
 }
