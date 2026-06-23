@@ -1,10 +1,7 @@
 #include <iostream>
 #include <string>
-#include <cstdlib>
-#include <ctime>
 using namespace std;
 
-// ====================== WARNA ANSI ======================
 const string RESET  = "\033[0m";
 const string BOLD   = "\033[1m";
 const string MERAH  = "\033[31m";
@@ -16,7 +13,7 @@ const string CYAN   = "\033[36m";
 const string PUTIH  = "\033[30m";
 const string ABU    = "\033[90m";
 
-// Warna unik untuk tiap banner ASCII (256-warna, gelap agar terbaca di tema terang)
+
 const string W_JUDUL = "\033[38;5;25m";   // biru
 const string W_MENU  = "\033[38;5;30m";   // teal
 const string W_INVES = "\033[38;5;28m";   // hijau
@@ -26,81 +23,81 @@ const string W_CATAT = "\033[38;5;62m";   // indigo
 const string W_PELAK = "\033[38;5;124m";  // merah
 const string W_DEDUK = "\033[38;5;166m";  // oranye
 
-// ====================== ASCII ART ======================
+
 const string ART_JUDUL =
-R"FIG(
+R"(
   ____ _    _   _ _____ _   _ _   _ _   _ _____
  / ___| |  | | | | ____| | | | | | | \ | |_   _|
 | |   | |  | | | |  _| | |_| | | | |  \| | | |
 | |___| |__| |_| | |___|  _  | |_| | |\  | | |
  \____|_____\___/|_____|_| |_|\___/|_| \_| |_|
-)FIG";
+)";
 
 const string ART_MENU =
-R"FIG(
+R"(
  __  __ ___ _  _ _   _   _   _ _____ _   __  __   _
 |  \/  | __| \| | | | | | | | |_   _/_\ |  \/  | /_\
 | |\/| | _|| .` | |_| | | |_| | | |/ _ \| |\/| |/ _ \
 |_|  |_|___|_|\_|\___/   \___/  |_/_/ \_\_|  |_/_/ \_\
-)FIG";
+)";
 
 const string ART_INVESTIGASI =
-R"FIG(
+R"(
  ___ _  ___   _____ ___ _____ ___ ___   _   ___ ___
 |_ _| \| \ \ / / __/ __|_   _|_ _/ __| /_\ / __|_ _|
  | || .` |\ V /| _|\__ \ | |  | | (_ |/ _ \\__ \| |
 |___|_|\_| \_/ |___|___/ |_| |___\___/_/ \_\___/___|
-)FIG";
+)";
 
 const string ART_WAWANCARA =
-R"FIG(
+R"(
 __      _____      ___   _  _  ___   _   ___    _
 \ \    / /_\ \    / /_\ | \| |/ __| /_\ | _ \  /_\
  \ \/\/ / _ \ \/\/ / _ \| .` | (__ / _ \|   / / _ \
   \_/\_/_/ \_\_/\_/_/ \_\_|\_|\___/_/ \_\_|_\/_/ \_\
-)FIG";
+)";
 
 const string ART_BUKTI =
-R"FIG(
+R"(
  ___ _   _ _  _______ ___
 | _ ) | | | |/ /_   _|_ _|
 | _ \ |_| | ' <  | |  | |
 |___/\___/|_|\_\ |_| |___|
-)FIG";
+)";
 
 const string ART_CATATAN =
-R"FIG(
+R"(
   ___   _ _____ _ _____ _   _  _
  / __| /_\_   _/_\_   _/_\ | \| |
 | (__ / _ \| |/ _ \| |/ _ \| .` |
  \___/_/ \_\_/_/ \_\_/_/ \_\_|\_|
-)FIG";
+)";
 
 const string ART_PELAKU =
-R"FIG(
+R"(
  ___ ___ _      _   _  ___   _
 | _ \ __| |    /_\ | |/ / | | |
 |  _/ _|| |__ / _ \| ' <| |_| |
 |_| |___|____/_/ \_\_|\_\\___/
-)FIG";
+)";
 
 const string ART_DEDUKSI =
-R"FIG(
+R"(
  ___  ___ ___  _   _ _  _____ ___
 |   \| __|   \| | | | |/ / __|_ _|
 | |) | _|| |) | |_| | ' <\__ \| |
 |___/|___|___/ \___/|_|\_\___/___|
-)FIG";
+)";
 
 
-// ====================== KONSTANTA GLOBAL ======================
+
 const int JUMLAH_TERSANGKA = 3;
 const int JUMLAH_PERTANYAAN = 5;
 const int JUMLAH_BUKTI      = 7;
 const int JUMLAH_ADEGAN     = 10;
 const int BIG               = 100000; // batas cin.ignore
 
-// ====================== UTILITAS TAMPILAN ======================
+
 void clear() {
     cout << "\033[H\033[2J\033[3J" << flush;
 }
@@ -109,9 +106,9 @@ void garis() {
     cout << ABU << "=========================================================" << RESET << "\n";
 }
 
-// ====================== UTILITAS INPUT ======================
-// Membaca bilangan bulat dengan aman. Selalu membersihkan sisa baris,
-// sehingga buffer cin dijamin bersih setelah pemanggilan.
+// UTILITAS INPUT
+// Membaca bilangan bulat dengan aman
+// sehingga buffer cin bersih setelah pemanggilan.
 int bacaAngka(const string& prompt) {
     cout << KUNING << prompt << RESET;
     int x;
@@ -130,8 +127,7 @@ int bacaAngka(const string& prompt) {
     return x;
 }
 
-// Jeda baca. Karena bacaAngka() selalu membersihkan buffer,
-// cin.get() di sini akan benar-benar menunggu satu ENTER.
+
 void pause(const string& pesan = "Tekan ENTER untuk melanjutkan...") {
     cout << ABU << pesan << RESET;
     cin.get();
@@ -248,8 +244,8 @@ void intro() {
     cout << "Anda adalah seorang Detektif yang ditugaskan malam ini juga.\n";
     cout << "Mansion telah dikunci, dan ada 3 orang tersangka di dalam rumah:\n";
     cout << "1. Emma Alden (Istri David)\n";
-    cout << "2. Liam (Asisten Keuangan David)\n";
-    cout << "3. Lena (Pelayan Mansion)\n\n";
+    cout << "2. Liam (Sahabat David)\n";
+    cout << "3. Lena (Asisten Pribadi David)\n\n";
     cout << "Gunakan kemampuan analisis Anda untuk memeriksa seluruh bukti\n";
     cout << "dan mewawancarai tersangka sebelum menuduh pembunuh aslinya!\n";
     garis();
@@ -257,9 +253,7 @@ void intro() {
     cout << endl;
 }
 
-// ====================== WAWANCARA ======================
-// Pemain bebas menanyakan SEMUA pertanyaan yang tersedia (tidak lagi
-// dibatasi 3 dari 5), dan boleh kembali lagi untuk menanyakan sisanya.
+// ====================== WAWANCARA ======================.
 void wawancaraTersangka(int index) {
     Tersangka *ptr = &tersangka[index];
 
@@ -270,7 +264,7 @@ void wawancaraTersangka(int index) {
         cout << BOLD << PUTIH << "        WAWANCARA DENGAN " << ptr->nama << RESET << "\n";
         garis();
 
-        int peta[JUMLAH_PERTANYAAN]; // nomor menu -> indeks pertanyaan asli
+        int peta[JUMLAH_PERTANYAAN]; 
         int n = 0;
         cout << "Pilih pertanyaan:\n";
         for (int q = 0; q < JUMLAH_PERTANYAAN; q++) {
@@ -371,8 +365,6 @@ void analisisBukti() {
 }
 
 // ====================== CATATAN DETEKTIF (NOTEBOOK) ======================
-// Menggantikan "lihatHasilWawancara": kini juga merangkum progres dan bukti
-// agar pemain dapat menyusun deduksi sebelum menuduh.
 void catatanDetektif() {
     clear();
     cout << W_CATAT << ART_CATATAN << RESET;
@@ -400,6 +392,11 @@ void catatanDetektif() {
         if (!ada) cout << "  (Belum ada pertanyaan yang diajukan.)\n";
         garis();
     }
+
+    pause();
+    clear();
+    cout << W_CATAT << ART_CATATAN << RESET;
+    garis();
 
     cout << "\nBUKTI YANG SUDAH DIANALISIS:\n";
     bool adaBukti = false;
@@ -577,9 +574,7 @@ void tampilEndingGagal() {
 }
 
 // ====================== TENTUKAN PELAKU + DEDUKSI AKHIR ======================
-// Mengembalikan true jika permainan harus berakhir (menang atau gagal).
 bool tentukanPelaku() {
-    // --- Gerbang syarat ---
     bool semuaWawancara = true;
     int totalPertanyaan = 0;
     for (int i = 0; i < JUMLAH_TERSANGKA; i++) {
@@ -608,7 +603,6 @@ bool tentukanPelaku() {
         return false;
     }
 
-    // --- Penuduhan dengan kesempatan terbatas ---
     const int PELAKU_BENAR = 3; // Lena
     int sisaKesempatan = 2;
     int skor = 0;
@@ -698,8 +692,6 @@ bool tentukanPelaku() {
     }
     garis();
     pause();
-
-    // Bonus ketelitian: makin banyak pertanyaan diajukan, makin tinggi (maks 30)
     int bonusTeliti = totalPertanyaan * 2;
     if (bonusTeliti > 30) bonusTeliti = 30;
     skor += bonusTeliti;
@@ -723,7 +715,7 @@ bool tentukanPelaku() {
     pause("Tekan ENTER untuk menyaksikan epilog penutupan kasus...");
 
     tampilEnding();
-    return true; // permainan berakhir (menang)
+    return true; 
 }
 
 // ====================== MENU UTAMA ======================
@@ -739,8 +731,8 @@ int inputMenu() {
 }
 
 int main() {
-    srand(time(0));
     intro();
+    
     clear();
 
     int pilihan;
