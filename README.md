@@ -77,7 +77,9 @@ Benar?
  │               │
 Ya             Tidak
  │               │
-Menang       Kembali Investigasi
+Menang         Gagal
+ │
+Deduksi
  │
 END
 ```
