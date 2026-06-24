@@ -106,15 +106,13 @@ void garis() {
     cout << ABU << "=========================================================" << RESET << "\n";
 }
 
-// UTILITAS INPUT
-// Membaca bilangan bulat dengan aman
-// sehingga buffer cin bersih setelah pemanggilan.
+
 int bacaAngka(const string& prompt) {
     cout << KUNING << prompt << RESET;
     int x;
     cin >> x;
     while (cin.fail()) {
-        if (cin.eof()) { // input stream berakhir -> tutup program dengan bersih
+        if (cin.eof()) { 
             cout << "\n[Input berakhir. Permainan ditutup.]\n";
             exit(0);
         }
@@ -123,7 +121,7 @@ int bacaAngka(const string& prompt) {
         cout << MERAH << "Input harus berupa angka! " << RESET << KUNING << prompt << RESET;
         cin >> x;
     }
-    cin.ignore(BIG, '\n'); // buang sisa baris (termasuk '\n')
+    cin.ignore(BIG, '\n'); 
     return x;
 }
 
@@ -133,7 +131,6 @@ void pause(const string& pesan = "Tekan ENTER untuk melanjutkan...") {
     cin.get();
 }
 
-// ====================== DATA TERSANGKA ======================
 struct Tersangka {
     string nama;
     string motif;
@@ -208,7 +205,7 @@ Tersangka tersangka[JUMLAH_TERSANGKA] = {
     }
 };
 
-// ====================== DATA BUKTI (GLOBAL & PERSISTEN) ======================
+
 struct Bukti {
     string judul;
     string isi;
@@ -227,7 +224,6 @@ Bukti daftarBukti[JUMLAH_BUKTI] = {
 
 bool semuaBuktiDianalisis = false;
 
-// ====================== INTRO ======================
 void intro() {
     cout << W_JUDUL << BOLD << ART_JUDUL << RESET;
     cout << KUNING << "              A Mystery Solver Game               \n" << RESET;
@@ -253,7 +249,6 @@ void intro() {
     cout << endl;
 }
 
-// ====================== WAWANCARA ======================.
 void wawancaraTersangka(int index) {
     Tersangka *ptr = &tersangka[index];
 
@@ -291,7 +286,7 @@ void wawancaraTersangka(int index) {
 
         int pilihan = bacaAngka("Pilihan : ");
 
-        if (pilihan == n + 1) { // selesai
+        if (pilihan == n + 1) { 
             clear();
             return;
         }
@@ -342,7 +337,7 @@ void menuWawancara() {
     } while (pilih != 0);
 }
 
-// ====================== ANALISIS BUKTI ======================
+
 void analisisBukti() {
     clear();
     cout << W_BUKTI << ART_BUKTI << RESET;
@@ -353,7 +348,7 @@ void analisisBukti() {
         cout << "---------------------------------------------------------\n";
         cout << "Judul    : " << daftarBukti[i].judul << "\n";
         cout << "Analisis : " << daftarBukti[i].isi << "\n";
-        daftarBukti[i].ditemukan = true; // status kini persisten (global)
+        daftarBukti[i].ditemukan = true; 
     }
 
     garis();
@@ -364,7 +359,7 @@ void analisisBukti() {
     clear();
 }
 
-// ====================== CATATAN DETEKTIF (NOTEBOOK) ======================
+
 void catatanDetektif() {
     clear();
     cout << W_CATAT << ART_CATATAN << RESET;
@@ -412,7 +407,6 @@ void catatanDetektif() {
     clear();
 }
 
-// ====================== MENU INVESTIGASI ======================
 void investigasi() {
     int pilih;
     do {
@@ -437,9 +431,10 @@ void investigasi() {
     } while (pilih != 0);
 }
 
-// ====================== ENDING (MENANG) ======================
 void tampilEnding() {
-    struct Adegan { string narasi; };
+    struct Adegan { 
+	string narasi;
+	 };
 
     string pembatas = "---------------------------------------------------------\n";
 
@@ -554,7 +549,6 @@ void tampilEnding() {
     pause();
 }
 
-// ====================== ENDING (GAGAL) ======================
 void tampilEndingGagal() {
     clear();
     garis();
@@ -573,7 +567,6 @@ void tampilEndingGagal() {
     pause();
 }
 
-// ====================== TENTUKAN PELAKU + DEDUKSI AKHIR ======================
 bool tentukanPelaku() {
     bool semuaWawancara = true;
     int totalPertanyaan = 0;
@@ -651,7 +644,6 @@ bool tentukanPelaku() {
         return true; // permainan berakhir (gagal)
     }
 
-    // --- Deduksi akhir (CARA & MOTIF) untuk menentukan skor ---
     clear();
     cout << W_DEDUK << ART_DEDUKSI << RESET;
     garis();
@@ -696,7 +688,6 @@ bool tentukanPelaku() {
     if (bonusTeliti > 30) bonusTeliti = 30;
     skor += bonusTeliti;
 
-    // --- Peringkat detektif ---
     string rank;
     if (skor >= 110)      rank = "DETEKTIF LEGENDARIS";
     else if (skor >= 85)  rank = "DETEKTIF HANDAL";
@@ -718,7 +709,6 @@ bool tentukanPelaku() {
     return true; 
 }
 
-// ====================== MENU UTAMA ======================
 int inputMenu() {
     cout << W_MENU << ART_MENU << RESET;
     garis();
